@@ -1,5 +1,6 @@
 # SOLUTION_STEVE_LIN
-Please reference Challenging-1.README.md and Challenging-2.README.md
+This challenging test was built using [GitHub](https://github.com/jxl9754/SOLUTION_STEVE_LIN.git).
 
-GitHub:
-https://github.com/jxl9754/SOLUTION_STEVE_LIN.git
+Please reference
+[Challenging-1.README.md](Challenging-1.README.md) and [Challenging-2.README.md](Challenging-2.README.md) for the details
+
