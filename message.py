@@ -3,7 +3,7 @@ This is the message module and implement create hash message and read message
 """
 
 # 3rd party modules
-# from flask import make_response, abort
+from flask import make_response, abort
 import hashlib
 
 # Data to serve with this test
@@ -23,7 +23,7 @@ def get_message(hash_msg):
         return {"message": message_key}, 200
     # otherwise, nope, not found
     else:
-        return {"err_msg": "Hash Message not found"}, 404
+        abort(404, {"err_msg": "Hash Message not found"})
 
 
 def create_hash_sha256(msg):
@@ -42,4 +42,4 @@ def create_hash_sha256(msg):
         return {"digest": hash_object.hexdigest()}, 201
     # Otherwise, they exist, that's an error
     else:
-        return {"err_msg": "No input Message"}, 404
+        abort(404, {"err_msg": "No input Message"})
