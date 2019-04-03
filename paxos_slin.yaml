@@ -1,0 +1,57 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger ReST
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /
+
+# Paths supported by the server application
+paths:
+  /messages:
+    post:
+      operationId: message.create_hash_sha256
+      tags:
+        - msg
+      summary: Create a hash and add it to the hash list
+      description: Create a new hash in the hash list
+      parameters:
+        - name: msg
+          in: body
+          description: SHA256 to create
+          required: True
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: SHA256 Hash Message of message to create
+
+      responses:
+        201:
+          description: Successfully created hash message in list
+
+  /messages/{hash_msg}:
+    get:
+      operationId: message.get_message
+      tags:
+        - hash_msg
+      summary: Read one message from the hash message list
+      description: Read one message from the hash message list
+      parameters:
+        - name: hash_msg
+          in: path
+          description: hash of the message to get from the list
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read message from hash message list operation
+          schema:
+            properties:
+              hash:
+                type: string
