@@ -12,10 +12,10 @@ To run the second challenging test command
 
 What is the big O notation for your program? 
 complexity = O(C(n,2))
-> Ans: O(n^2) for find pair gifts
+> Ans: O(n^2) for finding pair gifts
            
 complexity = O(C(n,3))
-> Ans: O(n^3) for find triple gifts
+> Ans: O(n^3) for finding triple gifts
 
 Bonus Question A:
 > Ans: Implemented in the function - finding_closest_three
