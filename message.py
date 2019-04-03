@@ -4,7 +4,7 @@ message collection
 """
 
 # 3rd party modules
-from flask import make_response, abort
+# from flask import make_response, abort
 import hashlib
 
 # Data to serve with this test
@@ -16,17 +16,15 @@ def get_message(hash_msg):
     """
     This function responds to a request for /messages/{hash}
     :param hash_msg:   hash of message to find
-    :return:        message key
+    :return:        message and 200 return code or 404 on hash not found
     """
     # Does the hash exist in hsah_message?
     if hash_msg in hash_message:
         message_key = hash_message.get(hash_msg)
-
+        return {"message": message_key}, 200
     # otherwise, nope, not found
     else:
-        abort(404, "Hash Message {msg} not found".format(msg=hash_msg))
-
-    return {"message": message_key}, 200
+        return {"err_msg": "Hash Message not found"}, 404
 
 
 def create_hash_sha256(msg):
@@ -43,7 +41,6 @@ def create_hash_sha256(msg):
         hash_object=hashlib.sha256(message_key.encode('utf-8'))
         hash_message[hash_object.hexdigest()] = message_key
         return {"digest": hash_object.hexdigest()}, 201
-
     # Otherwise, they exist, that's an error
     else:
-        abort(404, "No input Message")
+        return {"err_msg": "No input Message"}, 404
