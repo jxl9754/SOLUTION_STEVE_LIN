@@ -24,7 +24,7 @@ def get_message(hash_msg):
 
     # otherwise, nope, not found
     else:
-        abort( 404, "Hash Message {msg} not found".format(msg=hash_msg))
+        abort(404, "Hash Message {msg} not found".format(msg=hash_msg))
 
     return {"message": message_key}, 200
 
@@ -33,8 +33,8 @@ def create_hash_sha256(msg):
     """
     This function creates hash256 structure
     based on the passed in msg data
-    :param msg:  person to create in message structure
-    :return:        201 on success, 406 on msg exists
+    :param msg:  message string to create hash in message structure
+    :return:        201 on success, 404 on msg key not exists
     """
     message_key = msg.get("message", None)
 
@@ -46,4 +46,4 @@ def create_hash_sha256(msg):
 
     # Otherwise, they exist, that's an error
     else:
-        abort( 404, "No input Message")
+        abort(404, "No input Message")

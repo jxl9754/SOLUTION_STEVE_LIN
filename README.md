@@ -1,2 +1,5 @@
 # SOLUTION_STEVE_LIN
-Please reference README_Find_Pair.md and README_Message.md
+Please reference Challenging-1.README.md and Challenging-2.README.md
+
+GitHub:
+https://github.com/jxl9754/SOLUTION_STEVE_LIN.git

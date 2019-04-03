@@ -1,5 +1,4 @@
-GitHub:
-https://github.com/jxl9754/SOLUTION_STEVE_LIN.git
+
 
 Challenge #1 - Programming
 
