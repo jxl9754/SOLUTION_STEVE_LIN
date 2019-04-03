@@ -23,7 +23,7 @@ def get_message(hash_msg):
         return {"message": message_key}, 200
     # otherwise, nope, not found
     else:
-        abort(404, {"err_msg": "Hash Message not found"})
+        abort(404, {"err_msg": "Hash Message not found - " + hash_msg})
 
 
 def create_hash_sha256(msg):
