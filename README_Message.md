@@ -9,7 +9,7 @@ Unit Test
 you can run the unit test cases under tests/test_message.py
 
 Without docker - run standalone
-1. python3 main.py
+1. python3 app.py
 2. curl -X POST -H "Content-Type: application/json" -d '{"message": "foo"}' http://localhost:8080/messages
 3. curl http://localhost:8080/messages/2c26b46b68ffc68ff99b453c1d30413413422d706483
 4. curl http://localhost:8080/messages/2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae

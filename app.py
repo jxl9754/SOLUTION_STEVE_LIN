@@ -5,7 +5,7 @@ import connexion
 app = connexion.App(__name__, specification_dir='./')
 
 # Read the SOLUTION_STEVE_LIN_1.yml file to configure the endpoints
-app.add_api('SOLUTION_STEVE_LIN_1.yaml')
+app.add_api('SOLUTION_STEVE_LIN.yaml')
 
 def _app_run():
     app.run(host='0.0.0.0', port=8080, debug=True)
