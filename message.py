@@ -1,6 +1,5 @@
 """
-This is the message module and supports all the ReST actions for the
-message collection
+This is the message module and implement create hash message and read message
 """
 
 # 3rd party modules

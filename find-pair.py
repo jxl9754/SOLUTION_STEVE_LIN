@@ -7,6 +7,7 @@ items = {}
 item_names = {}
 
 
+# read price csv file
 def read_file(filename):
     with open(filename) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -17,50 +18,51 @@ def read_file(filename):
             item_names.setdefault(int(row[1]),[]).append(row[0])
 
 
-def finding_closet_two(numbers,target):
-    closet = []
+# finding the closest sum of two below balance
+def finding_closest_two(numbers, balance):
+    closest = []
     for i in itertools.combinations(numbers, 2):
-        if sum(i) == target:
+        if sum(i) == balance:
             return i
         else:
-            if sum(i) < target:
-                closet.append((target - sum(i), i))
+            if sum(i) < balance:
+                closest.append((balance - sum(i), i))
 
-    if closet == []:
+    if closest == []:
         return None
     else:
-        return min(closet)[1]
+        return min(closest)[1]
 
 
-def finding_closet_three(numbers,target):
-    closet = []
+# finding the closest sum of three below balance
+def finding_closest_three(numbers, balance):
+    closest = []
     for i in itertools.combinations(numbers, 3):
-        if sum(i) == target:
+        if sum(i) == balance:
             return i
         else:
-            if sum(i) < target:
-                closet.append((target - sum(i), i))
+            if sum(i) < balance:
+                closest.append((balance - sum(i), i))
 
-    if closet == []:
+    if closest == []:
         return None
     else:
-        return min(closet)[1]
+        return min(closest)[1]
 
+
+# main function
 def main():
-
-    ###print(len(sys.argv))
 
     if len(sys.argv) != 3:
         print("This command has wrong input parameters")
         print("python3 find-pair.py filename.txt balance")
         return
 
-    ###print(sys.argv[1])
     read_file(sys.argv[1])
 
     balance = int(sys.argv[2])
 
-    result = finding_closet_two(items.values(), balance)
+    result = finding_closest_two(items.values(), balance)
     print("Choose Two:")
     if result is None:
         print("Not Possible")
@@ -80,7 +82,7 @@ def main():
     items.clear()
     item_names.clear()
     read_file(sys.argv[1])
-    result = finding_closet_three(items.values(), balance)
+    result = finding_closest_three(items.values(), balance)
     if result is None:
         print("Not Possible")
         return
@@ -90,8 +92,8 @@ def main():
         item = item_names[i][0]
         item_names[i].remove(item)
         if coma>0:
-            print(item, i, end =", ")
-            coma=coma-1
+            print(item, i, end=", ")
+            coma = coma-1
         else:
             print(item, i)
 
