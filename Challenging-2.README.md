@@ -1,7 +1,7 @@
-Challenge #2 - Programming
+Challenging #2 - Programming
 
-To run the second question
-1. python3 find-pair.py prices.txt 1200
+To run the second challenging command
+> python3 find-pair.py prices.txt 1200
 
 
 What is the big O notation for your program? 
@@ -12,7 +12,7 @@ complexity = O(C(n,3))
            O(n^3) for find triple
 
 Bonus Question A:
-Implemented in the function - finding_closet_three
+Implemented in the function - finding_closest_three
 
 Bonus Question B:
 Ans: We can load only the price as number and filter out any price larger 

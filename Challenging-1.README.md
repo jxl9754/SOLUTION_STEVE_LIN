@@ -8,17 +8,17 @@ Unit Test
 you can run the unit test cases under tests/test_message.py
 
 Without docker - run standalone
-1. python3 app.py
-2. curl -X POST -H "Content-Type: application/json" -d '{"message": "foo"}' http://localhost:8080/messages
-3. curl http://localhost:8080/messages/2c26b46b68ffc68ff99b453c1d30413413422d706483
-4. curl http://localhost:8080/messages/2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae
+> python3 app.py
+> curl -X POST -H "Content-Type: application/json" -d '{"message": "foo"}' http://localhost:8080/messages
+> curl http://localhost:8080/messages/2c26b46b68ffc68ff99b453c1d30413413422d706483
+> curl http://localhost:8080/messages/2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae
 
 Deploy to Docker and run from command line by curl
-1. docker build -t paxos-test_v1 .
-2. docker run -d -p 8080:8080 paxos-test_v1
-3. curl -X POST -H "Content-Type: application/json" -d '{"message": "foo"}' http://localhost:8080/messages
-4. curl http://localhost:8080/messages/2c26b46b68ffc68ff99b453c1d30413413422d706483
-5. curl http://localhost:8080/messages/2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae
+> docker build -t paxos-test_v1 .
+> docker run -d -p 8080:8080 paxos-test_v1
+> curl -X POST -H "Content-Type: application/json" -d '{"message": "foo"}' http://localhost:8080/messages
+> curl http://localhost:8080/messages/2c26b46b68ffc68ff99b453c1d30413413422d706483
+> curl http://localhost:8080/messages/2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae
 
 Scaling Question ​
 What would the bottleneck(s) be in your implementation as you acquire more users? How you might scale your
