@@ -14,10 +14,12 @@ How To Run
 Questions
 =
 What is the big O notation for your program? 
-complexity = O(C(n,2))
+<BR> I used itertools package's combinations function which has C(n,k) 
+n is the number of available gifts and k is the number of selected gifts. 
+<BR>`finding pair gifts complexity = O(C(n,2)) = n(n-1)/2 ≈ n^2`
 > Ans: O(n^2) for finding pair gifts
            
-complexity = O(C(n,3))
+`finding triple gifts complexity = O(C(n,3)) = n(n-1)(n-2)/(2*3) ≈ n^3`
 > Ans: O(n^3) for finding triple gifts
 
 Bonus
