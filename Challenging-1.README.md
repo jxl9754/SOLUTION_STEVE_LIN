@@ -25,10 +25,11 @@ microservice?
 > Ans: Currently all the messages and hashes stored in the memory. There is no memory limit imposed by Python. 
 However, you will get a MemoryError if you run out of RAM. Also in the docker/Kubernetes environment,
 the container allocate memory for the micro-services, so the memory is actually limited. Theoretically, the 
-micro-service should be stateless so the data should store in the database or files for future references.
+micro-service should be stateless so the processing data should store in the `database` or `files` for future references.
 
 
 Deployment Question:
 How would you improve your deployment process if you needed to maintain this application long term?
-> Ans: Every micro-service should implement health check to make sure the liveness of the process. I used Jenkins 
-to do the deployment and automatic regression test. 
+> Ans: Every micro-service should implement `health check` to make sure the liveness of the process. We can use Jenkins 
+to do the `deployment`, `automatic regression test` and `continuous integration test`. The production environment should 
+be container-based and cloud-based.  Currently deploy to docker/kubernetes on AWS should be one of the best solutions.
