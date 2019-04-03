@@ -38,7 +38,7 @@ def create_hash_sha256(msg):
 
     # Does the input message exist?
     if message_key is not None:
-        hash_object=hashlib.sha256(message_key.encode('utf-8'))
+        hash_object = hashlib.sha256(message_key.encode('utf-8'))
         hash_message[hash_object.hexdigest()] = message_key
         return {"digest": hash_object.hexdigest()}, 201
     # Otherwise, that's an abort error - status 404
